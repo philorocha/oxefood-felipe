@@ -10,7 +10,7 @@ import br.com.ifpe.oxefoodfelipe.util.exception.EntityAlreadyExistsException;
 
 @Service
 public class CategoriaProdutoService extends GenericService {
-    
+
     @Autowired
     private CategoriaProdutoRepository repository;
 

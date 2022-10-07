@@ -12,19 +12,24 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import br.com.ifpe.oxefoodfelipe.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 @Entity
 @Table(name = "CategoriaProduto")
 @Where(clause = "habilitado = true")
 @Builder
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoriaProduto extends EntidadeAuditavel {
 
-    private static final long serialVersionUID = -1313945132507416245L;
-    
-    public static final String LABEL = "Categoria de Produto";
+	private static final long serialVersionUID = 5713705402572562099L;
+
+	public static final String LABEL = "Categoria de Produto";
 
     @JsonIgnore
     @NotNull
@@ -36,25 +41,8 @@ public class CategoriaProduto extends EntidadeAuditavel {
     private String descricao;
 
     public void updateFrom(CategoriaProduto param) {
-    this.setDescricao(param.getDescricao());
+    	this.setDescricao(param.getDescricao());
     }
 
-	public String getChaveEmpresa() {
-		return chaveEmpresa;
-	}
-
-	public void setChaveEmpresa(String chaveEmpresa) {
-		this.chaveEmpresa = chaveEmpresa;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-    
-    
 }
 

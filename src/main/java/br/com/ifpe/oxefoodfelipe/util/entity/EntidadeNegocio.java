@@ -7,8 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -24,14 +23,14 @@ import lombok.Setter;
 public abstract class EntidadeNegocio implements Serializable{
 
 	private static final long serialVersionUID = -2535326919992260589L;
-	
+
 	@Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-	
+
 	@JsonIgnore
     @NotNull
     @Column
 	private Boolean habilitado;
-	
+
 }

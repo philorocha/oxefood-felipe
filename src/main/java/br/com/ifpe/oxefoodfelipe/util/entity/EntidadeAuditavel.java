@@ -19,7 +19,7 @@ import lombok.Setter;
 @MappedSuperclass
 public abstract class EntidadeAuditavel extends EntidadeNegocio {
 
-    
+
     private static final long serialVersionUID = 2670975930781312759L;
 
     @JsonIgnore
@@ -42,44 +42,5 @@ public abstract class EntidadeAuditavel extends EntidadeNegocio {
     @Column
     private Long ultimaModificacaoPor; // Id do usuário que fez a última alteração
 
-	public Long getVersao() {
-		return versao;
-	}
-
-	public void setVersao(Long versao) {
-		this.versao = versao;
-	}
-
-	public LocalDate getDataCriacao() {
-		return dataCriacao;
-	}
-
-	public void setDataCriacao(LocalDate dataCriacao) {
-		this.dataCriacao = dataCriacao;
-	}
-
-	public LocalDate getDataUltimaModificacao() {
-		return dataUltimaModificacao;
-	}
-
-	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {
-		this.dataUltimaModificacao = dataUltimaModificacao;
-	}
-
-	public Long getCriadoPor() {
-		return criadoPor;
-	}
-
-	public void setCriadoPor(Long criadoPor) {
-		this.criadoPor = criadoPor;
-	}
-
-	public Long getUltimaModificacaoPor() {
-		return ultimaModificacaoPor;
-	}
-
-	public void setUltimaModificacaoPor(Long ultimaModificacaoPor) {
-		this.ultimaModificacaoPor = ultimaModificacaoPor;
-	}
 }
 
