@@ -5,9 +5,9 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
-import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,17 +20,17 @@ import lombok.Setter;
 @Getter
 @MappedSuperclass
 @EqualsAndHashCode(of = { "id" })
-public abstract class EntidadeNegocio implements Serializable{
+public abstract class EntidadeNegocio implements Serializable {
 
-	private static final long serialVersionUID = -2535326919992260589L;
+    private static final long serialVersionUID = 6166022111371021946L;
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Long id;
+    private Long id;
 
-	@JsonIgnore
+    @JsonIgnore
     @NotNull
     @Column
-	private Boolean habilitado;
+    private Boolean habilitado;
 
 }

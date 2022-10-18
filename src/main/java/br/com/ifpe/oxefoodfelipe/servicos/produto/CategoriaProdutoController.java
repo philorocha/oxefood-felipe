@@ -23,10 +23,10 @@ public class CategoriaProdutoController extends GenericController {
 
     @PostMapping
     public ResponseEntity<CategoriaProduto> save(@RequestBody @Valid CategoriaProdutoRequest request) {
-
-    validarPreenchimentoChave(request.getChaveEmpresa());
-    CategoriaProduto categoriaProduto = categoriaProdutoService.save(request.buildCategoriaProduto());
-    return new ResponseEntity<CategoriaProduto>(categoriaProduto, HttpStatus.CREATED);
+	
+	super.validarPreenchimentoChave(request.getChaveEmpresa());
+	CategoriaProduto categoriaProduto = categoriaProdutoService.save(request.buildCategoriaProduto());
+	return new ResponseEntity<CategoriaProduto>(categoriaProduto, HttpStatus.CREATED);
     }
 
 }
