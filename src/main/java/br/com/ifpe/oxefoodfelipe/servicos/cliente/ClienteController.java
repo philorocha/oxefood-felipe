@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ifpe.oxefoodfelipe.modelo.cliente.Cliente;
 import br.com.ifpe.oxefoodfelipe.modelo.cliente.ClienteService;
-import br.com.ifpe.oxefoodfelipe.modelo.produto.CategoriaProduto;
 import br.com.ifpe.oxefoodfelipe.util.entity.GenericController;
 
 @RestController
@@ -24,7 +23,7 @@ public class ClienteController extends GenericController{
 	
 	@PostMapping
     public ResponseEntity<Cliente> save(@RequestBody @Valid ClienteRequest request) {
-		super.validarPreenchimentoChave(request.getChaveEmpresa());
+		
 		Cliente cliente = clienteService.save(request.buildCliente());
 		return new ResponseEntity<Cliente>(cliente, HttpStatus.CREATED);
 	}
